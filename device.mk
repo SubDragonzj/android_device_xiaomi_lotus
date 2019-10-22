@@ -5,11 +5,18 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xhdpi
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 1440
-TARGET_SCREEN_WIDTH := 720
+TARGET_SCREEN_HEIGHT := 2280
+TARGET_SCREEN_WIDTH := 1080
+
+# Fingerprint
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml
+
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.1
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -48,4 +55,4 @@ PRODUCT_PACKAGES += \
 -include $(LOCAL_PATH)/system_prop.mk
 
 # Call proprietary blob setup
-$(call inherit-product-if-exists, vendor/xiaomi/mt6765-common/mt6765-common-vendor.mk)
+$(call inherit-product-if-exists, vendor/xiaomi/lotus/lotus-vendor.mk)

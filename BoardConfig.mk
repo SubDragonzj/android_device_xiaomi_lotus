@@ -1,4 +1,4 @@
-COMMON_PATH := device/xiaomi/mt6765-common
+DEVICE_PATH := device/xiaomi/lotus
 
 # Architecture
 TARGET_ARCH := arm
@@ -17,7 +17,8 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x15000000 --second_offset 0x00f00000 --tags_offset 0x14000000
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 TARGET_KERNEL_ARCH := arm
-TARGET_KERNEL_SOURCE := kernel/xiaomi/mt6765
+TARGET_KERNEL_SOURCE := kernel/xiaomi/lotus
+TARGET_KERNEL_CONFIG := lotus_defconfig
 
 # Dex
 ifeq ($(HOST_OS),linux)
@@ -33,12 +34,15 @@ TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
 # HIDL
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(COMMON_PATH)/framework_compatibility_matrix.xml
-DEVICE_FRAMEWORK_MANIFEST_FILE := $(COMMON_PATH)/framework_manifest.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(DEVICE_PATH)/framework_compatibility_matrix.xml
+DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/framework_manifest.xml
 
 # Misc
 BOARD_VENDOR := xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+# OTA
+TARGET_OTA_ASSERT_DEVICE := lotus
 
 # Panel vsync offsets
 VSYNC_EVENT_PHASE_OFFSET_NS := 8300000
@@ -60,10 +64,10 @@ TARGET_USES_MKE2FS := true
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/recovery.fstab
 
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
 
 # Root
 BOARD_ROOT_EXTRA_FOLDERS := nvcfg nvdata protect_f protect_s
