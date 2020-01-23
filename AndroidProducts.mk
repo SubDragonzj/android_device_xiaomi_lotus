@@ -15,5 +15,5 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_cereus.mk
+    $(LOCAL_DIR)/omni_lotus.mk
 
