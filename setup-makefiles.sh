@@ -18,7 +18,7 @@
 
 set -e
 
-DEVICE=mt6765-common
+DEVICE=lotus
 VENDOR=xiaomi
 
 INITIAL_COPYRIGHT_YEAR=2019

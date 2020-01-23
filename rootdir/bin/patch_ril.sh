@@ -1,3 +1,3 @@
 #!/sbin/sh
-cp -f /system/lib/libmtk-ril.so /vendor/lib/libmtk-ril.so
-cp -f /system/lib/librilfusion.so /vendor/lib/librilfusion.so
+cp -f /system/lib64/libmtk-ril.so /vendor/lib64/libmtk-ril.so
+cp -f /system/lib64/librilfusion.so /vendor/lib64/librilfusion.so

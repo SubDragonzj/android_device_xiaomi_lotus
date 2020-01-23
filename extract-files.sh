@@ -18,7 +18,7 @@
 
 set -e
 
-DEVICE=mt6765-common
+DEVICE=lotus
 VENDOR=xiaomi
 
 # Load extract_utils and do some sanity checks
